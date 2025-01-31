@@ -112,7 +112,6 @@ You can modify these variables to customize the script’s behavior.
 - **block_ip(src_ip)**: Blocks the IP address by adding a rule to `iptables`.
 - **unblock_ip(src_ip)**: Unblocks the IP address by removing the blocking rule from `iptables`.
 - **verify_block(src_ip)**: Checks if the IP address is currently blocked.
-- **display_rules()**: Prints out the current `iptables` rules for reference.
 
 ---
 
@@ -125,7 +124,6 @@ You can modify these variables to customize the script’s behavior.
     sudo apt install iptables
     ```
 
-- **KeyError when unblocking IP**: If you get an error like `KeyError: '172.19.32.1'`, it might mean that the IP is not in the `BlockedIPs` set. This can happen if the IP was not blocked in the first place. Ensure that the IP is present in `BlockedIPs` before trying to unblock it.
 
 - **iptables errors**: If `iptables` reports errors like `No such file or directory`, ensure that `iptables` is properly installed and configured for your system. You might need to switch to `iptables-legacy` if you're using a distribution that defaults to `nftables`.
 
