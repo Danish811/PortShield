@@ -23,11 +23,12 @@ By detecting and blocking suspicious IPs based on excessive SYN packets, this fi
 This Python script uses **Scapy** and **iptables** to monitor TCP connections and block IP addresses exhibiting malicious behavior (e.g., multiple port access within a short time). It checks for SYN packets and blocks IPs that exceed a threshold of port attempts.
 
 ### Features:
-- Monitor network traffic for incoming SYN packets.
+- Monitor network traffic for incoming SYN packets concurrently.
 - Block IP addresses that access multiple ports within a short time.
 - Unblock IP addresses after a certain timeout.
 - Utilizes **iptables** to manage firewall rules and block/unblock IPs.
 - Customizable timeout and port threshold settings.
+- Uses multithreading to avoid bottlenecks
 
 ---
 
