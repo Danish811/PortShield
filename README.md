@@ -100,7 +100,19 @@ You can modify these variables to customize the script’s behavior.
      ```
 
 ---
+## Simulate an Attack
+### **Run attack.py**:
+ Run the script using Python:
 
+   ```bash
+   python3 attack.py
+   ```
+### 2. **Use Nmap**:
+
+   ```bash
+   nmap $TARGET_IP
+   ```
+     
 ## Customizing the Script
 
 ### **Variables**:
