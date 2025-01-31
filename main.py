@@ -3,6 +3,7 @@ from collections import defaultdict
 import os
 import subprocess
 import time
+import threading
 
 RENEW_TIME = 60 * 10
 MAX_ATTEMPTS = 10
@@ -60,9 +61,14 @@ def checkpacket(packet):
             block_ip(src_ip)
 
     
-
+def process_packet(packet):
+    # Handle each packet in a separate thread
+    thread = threading.Thread(target=checkpacket, args=(packet,))
+    thread.start()
+    
 if __name__ == "__main__":
     print("Starting packet sniffing...")
-    capture = sniff(filter="tcp",prn=checkpacket)
+    sniff(filter="tcp", prn=process_packet, store=False)
+
 
     
